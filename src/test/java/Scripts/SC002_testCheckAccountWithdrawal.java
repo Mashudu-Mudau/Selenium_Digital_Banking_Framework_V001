@@ -8,7 +8,7 @@ import reusables.ReUsableMethods;
 public class SC002_testCheckAccountWithdrawal extends StartBrowser{
 	
 	@Test
-	public void Test_Check_Account_Withdrawal() throws IOException, InterruptedException {
+	public void Check_Account_Withdrawal() throws IOException, InterruptedException {
 	  ReUsableMethods CashWithdrawal = new ReUsableMethods();
 	  CashWithdrawal.TC01_Authentication();
 	  CashWithdrawal.TC01_AccountWithdrawal();

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="3" total="7" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="290352" started-at="2020-07-28T06:18:24 CAT" finished-at="2020-07-28T06:23:15 CAT">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="290352" started-at="2020-07-28T06:18:24 CAT" finished-at="2020-07-28T06:23:15 CAT">
+      <class name="Scripts.SC001_testUserAuthentication">
+        <test-method status="PASS" signature="report()[pri:0, instance:Scripts.SC001_testUserAuthentication@204f30ec]" name="report" is-config="true" duration-ms="238" started-at="2020-07-28T06:18:24 CAT" finished-at="2020-07-28T06:18:24 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- report -->
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:Scripts.SC001_testUserAuthentication@204f30ec]" name="beforeClass" is-config="true" duration-ms="9200" started-at="2020-07-28T06:18:24 CAT" finished-at="2020-07-28T06:18:34 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="method(java.lang.reflect.Method)[pri:0, instance:Scripts.SC001_testUserAuthentication@204f30ec]" name="method" is-config="true" duration-ms="9" started-at="2020-07-28T06:18:34 CAT" finished-at="2020-07-28T06:18:34 CAT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void Scripts.SC001_testUserAuthentication.Test_User_Authentication() throws java.io.IOException,java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- method -->
+        <test-method status="PASS" signature="Test_User_Authentication()[pri:0, instance:Scripts.SC001_testUserAuthentication@204f30ec]" name="Test_User_Authentication" duration-ms="55240" started-at="2020-07-28T06:18:34 CAT" finished-at="2020-07-28T06:19:29 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_User_Authentication -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:Scripts.SC001_testUserAuthentication@204f30ec]" name="afterTest" is-config="true" duration-ms="1015" started-at="2020-07-28T06:19:29 CAT" finished-at="2020-07-28T06:19:30 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:Scripts.SC001_testUserAuthentication@204f30ec]" name="afterClass" is-config="true" duration-ms="844" started-at="2020-07-28T06:19:30 CAT" finished-at="2020-07-28T06:19:31 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- Scripts.SC001_testUserAuthentication -->
+      <class name="Scripts.SC002_testCheckAccountWithdrawal">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:Scripts.SC002_testCheckAccountWithdrawal@e25b2fe]" name="beforeClass" is-config="true" duration-ms="6281" started-at="2020-07-28T06:19:31 CAT" finished-at="2020-07-28T06:19:37 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="method(java.lang.reflect.Method)[pri:0, instance:Scripts.SC002_testCheckAccountWithdrawal@e25b2fe]" name="method" is-config="true" duration-ms="1" started-at="2020-07-28T06:19:37 CAT" finished-at="2020-07-28T06:19:37 CAT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void Scripts.SC002_testCheckAccountWithdrawal.Test_Check_Account_Withdrawal() throws java.io.IOException,java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- method -->
+        <test-method status="PASS" signature="Test_Check_Account_Withdrawal()[pri:0, instance:Scripts.SC002_testCheckAccountWithdrawal@e25b2fe]" name="Test_Check_Account_Withdrawal" duration-ms="63264" started-at="2020-07-28T06:19:37 CAT" finished-at="2020-07-28T06:20:40 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_Check_Account_Withdrawal -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:Scripts.SC002_testCheckAccountWithdrawal@e25b2fe]" name="afterTest" is-config="true" duration-ms="1198" started-at="2020-07-28T06:20:40 CAT" finished-at="2020-07-28T06:20:42 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:Scripts.SC002_testCheckAccountWithdrawal@e25b2fe]" name="afterClass" is-config="true" duration-ms="169" started-at="2020-07-28T06:20:42 CAT" finished-at="2020-07-28T06:20:42 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- Scripts.SC002_testCheckAccountWithdrawal -->
+      <class name="Scripts.SC004_testUserRegistration">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:Scripts.SC004_testUserRegistration@146ba0ac]" name="beforeClass" is-config="true" duration-ms="6100" started-at="2020-07-28T06:22:01 CAT" finished-at="2020-07-28T06:22:07 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="Test_User_Registration()[pri:0, instance:Scripts.SC004_testUserRegistration@146ba0ac]" name="Test_User_Registration" duration-ms="66726" started-at="2020-07-28T06:22:07 CAT" finished-at="2020-07-28T06:23:13 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_User_Registration -->
+        <test-method status="PASS" signature="method(java.lang.reflect.Method)[pri:0, instance:Scripts.SC004_testUserRegistration@146ba0ac]" name="method" is-config="true" duration-ms="0" started-at="2020-07-28T06:22:07 CAT" finished-at="2020-07-28T06:22:07 CAT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void Scripts.SC004_testUserRegistration.Test_User_Registration() throws java.io.IOException,java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- method -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:Scripts.SC004_testUserRegistration@146ba0ac]" name="afterTest" is-config="true" duration-ms="989" started-at="2020-07-28T06:23:13 CAT" finished-at="2020-07-28T06:23:14 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:Scripts.SC004_testUserRegistration@146ba0ac]" name="afterClass" is-config="true" duration-ms="111" started-at="2020-07-28T06:23:14 CAT" finished-at="2020-07-28T06:23:15 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- Scripts.SC004_testUserRegistration -->
+      <class name="Scripts.SC003_testSavingsAccountDeposit">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:Scripts.SC003_testSavingsAccountDeposit@754ba872]" name="beforeClass" is-config="true" duration-ms="8599" started-at="2020-07-28T06:20:42 CAT" finished-at="2020-07-28T06:20:50 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="method(java.lang.reflect.Method)[pri:0, instance:Scripts.SC003_testSavingsAccountDeposit@754ba872]" name="method" is-config="true" duration-ms="0" started-at="2020-07-28T06:20:50 CAT" finished-at="2020-07-28T06:20:50 CAT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void Scripts.SC003_testSavingsAccountDeposit.Test_Savings_Account_Deposits() throws java.io.IOException,java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- method -->
+        <test-method status="PASS" signature="Test_Savings_Account_Deposits()[pri:0, instance:Scripts.SC003_testSavingsAccountDeposit@754ba872]" name="Test_Savings_Account_Deposits" duration-ms="69249" started-at="2020-07-28T06:20:50 CAT" finished-at="2020-07-28T06:22:00 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_Savings_Account_Deposits -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:Scripts.SC003_testSavingsAccountDeposit@754ba872]" name="afterTest" is-config="true" duration-ms="831" started-at="2020-07-28T06:22:00 CAT" finished-at="2020-07-28T06:22:00 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:Scripts.SC003_testSavingsAccountDeposit@754ba872]" name="afterClass" is-config="true" duration-ms="220" started-at="2020-07-28T06:22:00 CAT" finished-at="2020-07-28T06:22:01 CAT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- Scripts.SC003_testSavingsAccountDeposit -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
