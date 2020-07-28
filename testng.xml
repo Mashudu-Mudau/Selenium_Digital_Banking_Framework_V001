@@ -3,10 +3,10 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="Scripts.SC001_testUserRegistration"/>
-      <class name="Scripts.SC002_testUserAuthentication"/>
-      <class name="Scripts.SC003_testCheckAccountWithdrawal"/>
-      <class name="Scripts.SC004_testSavingsAccountDeposit"/>
+      <class name="Scripts.SC001_testUserAuthentication"/>
+      <class name="Scripts.SC002_testCheckAccountWithdrawal"/>
+      <class name="Scripts.SC003_testSavingsAccountDeposit"/>
+      <class name="Scripts.SC004_testUserRegistration"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
