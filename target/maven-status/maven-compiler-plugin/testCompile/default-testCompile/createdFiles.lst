@@ -1,5 +1,5 @@
-Scripts\SC003_testSavingsAccountDeposit.class
+Scripts\SC002_testSavingsAccountDeposit.class
+Scripts\SC003_testCheckAccountWithdrawal.class
 Scripts\SC001_testUserAuthentication.class
-Scripts\SC002_testCheckAccountWithdrawal.class
 Scripts\SC004_testUserRegistration.class
 reusables\ReUsableMethods.class

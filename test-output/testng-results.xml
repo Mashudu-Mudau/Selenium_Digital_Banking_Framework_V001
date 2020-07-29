@@ -2,43 +2,43 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="76866" started-at="2020-07-28T06:05:53 CAT" finished-at="2020-07-28T06:07:10 CAT">
+  <suite name="Default suite" duration-ms="31941" started-at="2020-07-29T10:56:18 CAT" finished-at="2020-07-29T10:56:50 CAT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="76866" started-at="2020-07-28T06:05:53 CAT" finished-at="2020-07-28T06:07:10 CAT">
-      <class name="Scripts.SC003_testSavingsAccountDeposit">
-        <test-method status="PASS" signature="report()[pri:0, instance:Scripts.SC003_testSavingsAccountDeposit@305fd85d]" name="report" is-config="true" duration-ms="253" started-at="2020-07-28T06:05:53 CAT" finished-at="2020-07-28T06:05:53 CAT">
+    <test name="Default test" duration-ms="31941" started-at="2020-07-29T10:56:18 CAT" finished-at="2020-07-29T10:56:50 CAT">
+      <class name="Scripts.SC004_testUserRegistration">
+        <test-method status="PASS" signature="report()[pri:0, instance:Scripts.SC004_testUserRegistration@2f943d71]" name="report" is-config="true" duration-ms="191" started-at="2020-07-29T10:56:18 CAT" finished-at="2020-07-29T10:56:19 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- report -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:Scripts.SC003_testSavingsAccountDeposit@305fd85d]" name="beforeClass" is-config="true" duration-ms="8433" started-at="2020-07-28T06:05:53 CAT" finished-at="2020-07-28T06:06:02 CAT">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:Scripts.SC004_testUserRegistration@2f943d71]" name="beforeClass" is-config="true" duration-ms="7926" started-at="2020-07-29T10:56:19 CAT" finished-at="2020-07-29T10:56:27 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="method(java.lang.reflect.Method)[pri:0, instance:Scripts.SC003_testSavingsAccountDeposit@305fd85d]" name="method" is-config="true" duration-ms="7" started-at="2020-07-28T06:06:02 CAT" finished-at="2020-07-28T06:06:02 CAT">
+        <test-method status="PASS" signature="method(java.lang.reflect.Method)[pri:0, instance:Scripts.SC004_testUserRegistration@2f943d71]" name="method" is-config="true" duration-ms="4" started-at="2020-07-29T10:56:27 CAT" finished-at="2020-07-29T10:56:27 CAT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void Scripts.SC003_testSavingsAccountDeposit.Test_Savings_Account_Deposits() throws java.io.IOException,java.lang.InterruptedException]]>
+                <![CDATA[public void Scripts.SC004_testUserRegistration.User_Registration() throws java.io.IOException,java.lang.InterruptedException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- method -->
-        <test-method status="PASS" signature="Test_Savings_Account_Deposits()[pri:0, instance:Scripts.SC003_testSavingsAccountDeposit@305fd85d]" name="Test_Savings_Account_Deposits" duration-ms="66469" started-at="2020-07-28T06:06:02 CAT" finished-at="2020-07-28T06:07:08 CAT">
+        <test-method status="PASS" signature="User_Registration()[pri:0, instance:Scripts.SC004_testUserRegistration@2f943d71]" name="User_Registration" duration-ms="22353" started-at="2020-07-29T10:56:27 CAT" finished-at="2020-07-29T10:56:49 CAT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test_Savings_Account_Deposits -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:Scripts.SC003_testSavingsAccountDeposit@305fd85d]" name="afterTest" is-config="true" duration-ms="792" started-at="2020-07-28T06:07:08 CAT" finished-at="2020-07-28T06:07:09 CAT">
+        </test-method> <!-- User_Registration -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:Scripts.SC004_testUserRegistration@2f943d71]" name="afterTest" is-config="true" duration-ms="845" started-at="2020-07-29T10:56:49 CAT" finished-at="2020-07-29T10:56:50 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:Scripts.SC003_testSavingsAccountDeposit@305fd85d]" name="afterClass" is-config="true" duration-ms="810" started-at="2020-07-28T06:07:09 CAT" finished-at="2020-07-28T06:07:10 CAT">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:Scripts.SC004_testUserRegistration@2f943d71]" name="afterClass" is-config="true" duration-ms="571" started-at="2020-07-29T10:56:50 CAT" finished-at="2020-07-29T10:56:50 CAT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- Scripts.SC003_testSavingsAccountDeposit -->
+      </class> <!-- Scripts.SC004_testUserRegistration -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

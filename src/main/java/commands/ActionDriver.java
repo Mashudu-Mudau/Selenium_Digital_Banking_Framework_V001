@@ -121,7 +121,7 @@ public class ActionDriver {
 		}
 	}
 	
-	public void verifyWithdrawalValidation() throws IOException {
+	public void verifyInsufficientWithdrawalValidation() throws IOException {
 		 
 			try {
 				 String withdrawalAmount = driver.findElement(CheckAccountViewPage.withdraw_txt2).getText();
@@ -148,7 +148,7 @@ public class ActionDriver {
 				
 				
 					if (expectedBalaceBroughtForward  == actualBalaceBroughtForward) {
-						 StartBrowser.childTest.fail("Withdrawal Validation Failed!  " +currentSavingsBalanceDouble+" -  "+withdrawalAmountDouble+" =  "+balanceBroughtForwardDouble);
+						 StartBrowser.childTest.fail("Withdrawal Validation Failed!  " +currentSavingsBalanceDouble+" -  "+withdrawalAmountDouble+" =  "+balanceBroughtForwardDouble ,MediaEntityBuilder.createScreenCaptureFromBase64String(screenShot()).build());
 					}
 				
 			}
@@ -159,9 +159,46 @@ public class ActionDriver {
 		
 	}
 	
+	
+	public void verifySuccessfullWithdrawalValidation() throws IOException {
+		 
+			 String withdrawalAmount = driver.findElement(CheckAccountViewPage.withdraw_txt2).getText();
+			 String currentSavingsBalance = driver.findElement(CheckAccountViewPage.currentBalance).getText();
+			 String balanceBroughtForward = driver.findElement(CheckAccountViewPage.balanceBroughtForward).getText();
+			 
+			 withdrawalAmount = withdrawalAmount.replaceAll("[$][-]", "");
+			 balanceBroughtForward = balanceBroughtForward.substring(1);
+			 currentSavingsBalance = currentSavingsBalance.replaceAll("[$]", "");
+			 
+			 double currentSavingsBalanceDouble = Double.parseDouble(currentSavingsBalance);
+			 double balanceBroughtForwardDouble = Double.parseDouble(balanceBroughtForward);
+			 double withdrawalAmountDouble = Double.parseDouble(withdrawalAmount);
+			
+			 
+			 double expectedBalaceBroughtForward = (currentSavingsBalanceDouble - withdrawalAmountDouble);
+			 double actualBalaceBroughtForward = balanceBroughtForwardDouble ;
+			
+			 System.out.println(currentSavingsBalanceDouble); 
+			 System.out.println(withdrawalAmountDouble);
+			 
+			System.out.println(expectedBalaceBroughtForward);
+			System.out.println(actualBalaceBroughtForward);
+			
+			
+				if (expectedBalaceBroughtForward  == actualBalaceBroughtForward) {
+					StartBrowser.childTest.pass("Successfully Verified Expected Withdrawal Transaction Of : " +currentSavingsBalanceDouble+" -  "+withdrawalAmountDouble+" =  "+balanceBroughtForwardDouble+" With Actual Transaction: " ,MediaEntityBuilder.createScreenCaptureFromBase64String(screenShot()).build());
+				}
+		
+				else {
+					 StartBrowser.childTest.fail("Withdrawal Validation Failed!  Expected Withdrawal Transaction:" +currentSavingsBalanceDouble+" -  "+withdrawalAmountDouble+" =  "+balanceBroughtForwardDouble +" is NOT Equal to the Actual Transaction: " ,MediaEntityBuilder.createScreenCaptureFromBase64String(screenShot()).build());
+				}
+		}
+
+
+	
 	public void verifyDepositValidation() throws IOException {
 		 
-		 
+		 try {
 		 String deposit_txt2 = driver.findElement(SavingsAccountViewPage.withdrawal_txt2).getText();
 		 String currentSavingsBalance = driver.findElement(SavingsAccountViewPage.currentBalance).getText();
 		 String balanceBroughtForward = driver.findElement(SavingsAccountViewPage.balanceBroughtForward).getText();
@@ -186,12 +223,16 @@ public class ActionDriver {
 		
 		
 			if (expectedBalaceBroughtForward  == actualBalaceBroughtForward) {
-				 StartBrowser.childTest.fail("Withdrawal Validation Failed! " +currentSavingsBalanceDouble+" + "+depositAmountDouble+" = "+balanceBroughtForwardDouble);
+				 StartBrowser.childTest.fail("Deposit Validation Failed! " +currentSavingsBalanceDouble+" + "+depositAmountDouble+" = "+balanceBroughtForwardDouble);
 			}
 			else {
-			 StartBrowser.childTest.pass("Successfully Verified Expected Deposit Transaction Balance Of: " +currentSavingsBalanceDouble+" + "+depositAmountDouble+" = "+balanceBroughtForwardDouble+"   "+" With Actual Deposit Transaction ",MediaEntityBuilder.createScreenCaptureFromBase64String(screenShot()).build());
+			 StartBrowser.childTest.pass("Successfully Verified Expected Deposit Transaction Of: " +currentSavingsBalanceDouble+" + "+depositAmountDouble+" = "+balanceBroughtForwardDouble+"   "+" With Actual Deposit Transaction ",MediaEntityBuilder.createScreenCaptureFromBase64String(screenShot()).build());
 			}
-	
+		}
+			catch (Exception e){
+				StartBrowser.childTest.pass("Successfully Validated Invalid Deposit Amount Transaction Denaied! " ,MediaEntityBuilder.createScreenCaptureFromBase64String(screenShot()).build());		 
+				
+			}
 		 
 		
 	}

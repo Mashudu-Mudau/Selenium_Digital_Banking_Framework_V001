@@ -52,61 +52,36 @@ import config.StartBrowser;
 		return(generatedstring);
 	}
 	
+	public String randomstring4() {
+		String generatedstring = RandomStringUtils.randomNumeric(2, 2);
+		return(generatedstring);
+	}
+	
 	public void TC01_Registration() throws IOException, InterruptedException {
 		 ActionDriver aDriver = new ActionDriver();
 		 StartBrowser.childTest = StartBrowser.parentTest.createNode("TC01_Verify Successful User Registration With Valid Email ID");
 		  aDriver.navigateToApplication("http://dbankdemo.com");
-		  Thread.sleep(2500);
 		  aDriver.click(LoginPage.signUpLink,"Sign Up Button");
-		  Thread.sleep(2500);
 		  aDriver.selectDropDown(NewAccountRegistrationPage.customerTitle, 1,"Customer Title");
-		  Thread.sleep(2500);
 			 aDriver.enter_txt(NewAccountRegistrationPage.customerFirstName, reader.getCellData("Sheet1", "firstname", 2), "FirstName Field");
-			 Thread.sleep(2500);
 			 aDriver.enter_txt(NewAccountRegistrationPage.customerLastName, reader.getCellData("Sheet1", "lastname", 2), "LastName Field");
 			 aDriver.click(NewAccountRegistrationPage.radiomaleTitle, "Male Gender Title");
-			 Thread.sleep(2500);
 			 aDriver.enter_txt(NewAccountRegistrationPage.customerDateOfBirth, "09/10/1995","Date Of Birth");
-			 Thread.sleep(2500);
 			 aDriver.enter_txt(NewAccountRegistrationPage.customerSSNID, "254-98-"+randomstring2(),"Social Security Number");
-			 Thread.sleep(2500);
-			 aDriver.enter_txt(NewAccountRegistrationPage.customerEmail,randomstring()+"@gmail.com", "email Address");
-			 
-			
+			 aDriver.enter_txt(NewAccountRegistrationPage.customerEmail,"mashudu.mudau@nihilent.com", "email Address");
 			 aDriver.enter_txt(NewAccountRegistrationPage.customerPassword, reader.getCellData("Sheet1", "password", 2), "Password Field");
 			 aDriver.enter_txt(NewAccountRegistrationPage.customerConfirmPassword, reader.getCellData("Sheet1", "password", 2), "Confirm Password Field");
-			 Thread.sleep(2500);
 			 aDriver.click(NewAccountRegistrationPage.btnNext, "Sign up for New Account");
-			 Thread.sleep(2500);
-			 
-			 aDriver.enter_txt(NewAccountRegistrationPage.customerAddress,reader.getCellData("Sheet1", "address1", 2), "Street Address");
-			 Thread.sleep(2500);
-			 aDriver.enter_txt(NewAccountRegistrationPage.customerLocality, reader.getCellData("Sheet1", "city", 2), "City Name");
-			 
-			 aDriver.enter_txt(NewAccountRegistrationPage.customerRegion, reader.getCellData("Sheet1", "Rigion", 2), "Rigion Name");
-			 
-			 aDriver.enter_txt(NewAccountRegistrationPage.customerPostalCode, reader.getCellData("Sheet1", "postalCode", 2), "Postal Code");
-			 
-			 aDriver.enter_txt(NewAccountRegistrationPage.customerCountry, reader.getCellData("Sheet1", "state", 2), "Country Name");
-			 
-			 aDriver.enter_txt(NewAccountRegistrationPage.customerHomePhone, reader.getCellData("Sheet1", "Hphone", 2), "Home Contact Details");
-			 Thread.sleep(2500);
-			 aDriver.enter_txt(NewAccountRegistrationPage.customerMobilePhone, reader.getCellData("Sheet1", "Mphone", 2), "Mobile Contact Details");
-			 Thread.sleep(2500);
-			 aDriver.enter_txt(NewAccountRegistrationPage.customerWorkPhone, reader.getCellData("Sheet1", "Wphone", 2), "Work Contact Details");
-			 Thread.sleep(2500);
-			 aDriver.click(NewAccountRegistrationPage.customerAgreeTerms, "Agree Terms");
-			 Thread.sleep(2500);
-			 aDriver.click(NewAccountRegistrationPage.btnRegister, "Register Button");
-			 Thread.sleep(2500);
-			 aDriver.captureElement(NewAccountRegistrationPage.accountregistrationSuccesful,"User Registration With Valid Email ID","Page");	
-	}
+			}
 	
 	
 	public void TC01_AccountWithdrawal() throws IOException, InterruptedException {
 		 ActionDriver aDriver = new ActionDriver();
-		 StartBrowser.childTest = StartBrowser.parentTest.createNode("TC02_Verify Correct Account Balance Reflects After a Withdrawal is Made");
-		 Thread.sleep(2500);
+		 StartBrowser.childTest = StartBrowser.parentTest.createNode("TC01_Verify Insufficient Withdrwal Funds Transaction ");
+		 driver.get("http://dbankdemo.com/");
+		 driver.findElement(By.name("username")).sendKeys(reader.getCellData("Sheet2", "authEmailAddress", 2));
+		 driver.findElement(By.name("password")).sendKeys(reader.getCellData("Sheet2", "authPassword", 2));
+		 driver.findElement(By.id("submit")).click();
 		 aDriver.click(MenuTab.transactionsMenu, "Savings Account");
 		 Thread.sleep(2500);
 		 aDriver.click(MenuTab.withdrawTransaction, "Withdraw menu");
@@ -121,19 +96,38 @@ import config.StartBrowser;
 		 aDriver.click(WithdrawalTransactionPage.btnSubmitWithdrawal, " Withdraw");
 		 Thread.sleep(2500);
 		 
-		 aDriver.verifyWithdrawalValidation();
+		 aDriver.verifyInsufficientWithdrawalValidation();
+		 //aDriver.captureElement(WithdrawalTransactionPage.InsufficientFundsAlert,"Error Insufficient Funds","");
+	}
+	
+	public void TC02_AccountWithdrawal() throws IOException, InterruptedException {
+		 ActionDriver aDriver = new ActionDriver();
+		 StartBrowser.childTest = StartBrowser.parentTest.createNode("TC02_Verify Successful Withdrawal Transaction with Correct Account Balance Reflecting After Withdrawal is Made");
+		 Thread.sleep(2500);
+		 aDriver.click(MenuTab.transactionsMenu, "Transact menu");
+		 Thread.sleep(2500);
+		 aDriver.click(MenuTab.withdrawTransaction, "Withdraw");
+		 Thread.sleep(2500);
+		 aDriver.captureElement(WithdrawalTransactionPage.accountWithdrawal_pageElement,"Account Withdrawal Page","Account Withdrawal Page");
+		 Thread.sleep(2500);
+		 aDriver.selectDropDown(WithdrawalTransactionPage.withdrwalAccount_Dropdown,1,"Savings Account Withdrawal");
+		 Thread.sleep(2500);
+		 aDriver.enter_txt(WithdrawalTransactionPage.withdrawalAmount_txt,"1"+randomstring4() , "Amount to Withdraw");
+		 Thread.sleep(2500);
+		 aDriver.click(WithdrawalTransactionPage.btnSubmitWithdrawal, " Withdraw");
+		 Thread.sleep(2500);
+		 
+		 aDriver.verifySuccessfullWithdrawalValidation();
 		 //aDriver.captureElement(WithdrawalTransactionPage.InsufficientFundsAlert,"Error Insufficient Funds","");
 	}
 	
 	
-	
-	public void TC01_AccountDeposit() throws IOException, InterruptedException {
+	public void TC02_AccountDeposit() throws IOException, InterruptedException {
 		ActionDriver aDriver = new ActionDriver();
-		 StartBrowser.childTest = StartBrowser.parentTest.createNode("TC02_Verify Correct Account Balance Reflects After a Deposit is Made");
+		 StartBrowser.childTest = StartBrowser.parentTest.createNode("TC02_Verify Successful Deposit Transaction with Correct Account Balance Reflecting After a Deposit is Made");
+		 aDriver.click(MenuTab.transactionsMenu, "Transact menu");
 		 Thread.sleep(2500);
-		 aDriver.click(MenuTab.transactionsMenu, "Savings Account");
-		 Thread.sleep(2500);
-		 aDriver.click(MenuTab.depositTransaction, "Deposit menu");
+		 aDriver.click(MenuTab.depositTransaction, "Deposit");
 		 Thread.sleep(2500);
 		 aDriver.captureElement(DepositTransactionPage.accountDeposit_pageElement,"Account Deposit Page","Account Deposit Page");
 		 Thread.sleep(2500);
@@ -146,14 +140,34 @@ import config.StartBrowser;
 		 Thread.sleep(2500);
 		 
 		 aDriver.verifyDepositValidation();
-		 aDriver.captureElement(SavingsAccountViewPage.userSavingsView,"Savings Account View","");
 	}
 		 
-   
+	public void TC01_AccountDeposit() throws IOException, InterruptedException {
+		ActionDriver aDriver = new ActionDriver();
+		 StartBrowser.childTest = StartBrowser.parentTest.createNode("TC01_Verify Deposit Trasaction with Invalid Amount Denies The Transaction");
+		 driver.get("http://dbankdemo.com/");
+		 driver.findElement(By.name("username")).sendKeys(reader.getCellData("Sheet2", "authEmailAddress", 2));
+		 driver.findElement(By.name("password")).sendKeys(reader.getCellData("Sheet2", "authPassword", 2));
+		 driver.findElement(By.id("submit")).click();
+		 aDriver.click(MenuTab.transactionsMenu, "Transact menu");
+		 Thread.sleep(2500);
+		 aDriver.click(MenuTab.depositTransaction, "Deposit");
+		 Thread.sleep(2500);
+		 aDriver.captureElement(DepositTransactionPage.accountDeposit_pageElement,"Account Deposit Page","Account Deposit Page");
+		 Thread.sleep(2500);
+		 aDriver.selectDropDown(DepositTransactionPage.accountDeposit_Dropdown,2,"Check Account Deposit");
+		 Thread.sleep(2500);
+		 aDriver.enter_txt(DepositTransactionPage.depositAmount_txt,"4hghf"+randomstring3() , "Amount to Deposit");
+		 
+		 Thread.sleep(2500);
+		 aDriver.click(DepositTransactionPage.btnSubmitDeposit, " Deposit");		 
+		 aDriver.verifyDepositValidation();
+		 
+	}
 
-	public void TC01_Authentication() throws IOException, InterruptedException {
+	public void TC02_Authentication() throws IOException, InterruptedException {
 		 ActionDriver aDriver = new ActionDriver();
-		 StartBrowser.childTest = StartBrowser.parentTest.createNode("TC01_Verify Successful User Authentication With Valid Credentials");
+		 StartBrowser.childTest = StartBrowser.parentTest.createNode("TC02_Verify Successful User Authentication With Valid Credentials");
 		 Thread.sleep(2500);
 		  aDriver.navigateToApplication("http://dbankdemo.com");
 		  Thread.sleep(2500);
@@ -166,13 +180,13 @@ import config.StartBrowser;
 		  //aDriver.click(UserAuthenticationPage.btnSignOut, "Logout");
 	}
 	
-	public void TC02_Authentication() throws IOException, InterruptedException {
+	public void TC01_Authentication() throws IOException, InterruptedException {
 		 ActionDriver aDriver = new ActionDriver();
-		  StartBrowser.childTest = StartBrowser.parentTest.createNode("TC02_Verify User Authentication Denaial With Invalid Credentials");
-		  aDriver.click(HomePage.userProfileImage, "Profile Menu");
-		  Thread.sleep(2500);
-		  aDriver.click(HomePage.btnLogout, "SignOut");
-		  Thread.sleep(2500);
+		  StartBrowser.childTest = StartBrowser.parentTest.createNode("TC01_Verify User Authentication Denial With Invalid Credentials");
+		  //aDriver.click(HomePage.userProfileImage, "Profile Menu");
+		  //Thread.sleep(2500);
+		  //aDriver.click(HomePage.btnLogout, "SignOut");
+		  //Thread.sleep(2500);
 		  aDriver.navigateToApplication("http://dbankdemo.com");
 		  Thread.sleep(2500);
 		  aDriver.enter_txt(LoginPage.loginUserName, reader.getCellData("Sheet2", "authEmailAddress", 3), "UserName");

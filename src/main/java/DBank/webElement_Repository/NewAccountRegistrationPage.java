@@ -18,7 +18,7 @@ public class NewAccountRegistrationPage {
 	public static By customerSSNID = By.id("ssn");
 	public static By checkBoxRecieveNewsLetter = By.name("newsletter");
 	public static By profileImage = By.xpath("/html/body/div[1]/div/div/div[1]/a/img");
-	public static By btnNext = By.xpath("/html/body/div[1]/div/div/div[2]/form/button");
+	public static By btnNext = By.xpath("/html/body/div[12]/div/div/div[2]/form/button");
 	public static By customerAddress = By.id("address");
 	public static By customerLocality = By.id("locality");
 	public static By customerRegion = By.id("region");

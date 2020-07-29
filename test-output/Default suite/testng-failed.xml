@@ -3,16 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Scripts.SC004_testCheckAccountWithdrawal">
+      <class name="Scripts.SC002_testCheckAccountWithdrawal">
         <methods>
-          <include name="CheckAccountWithdrawal"/>
-          <include name="afterTest"/>
+          <include name="Check_Account_Withdrawal"/>
           <include name="afterClass"/>
           <include name="report"/>
           <include name="method"/>
           <include name="beforeClass"/>
         </methods>
-      </class> <!-- Scripts.SC004_testCheckAccountWithdrawal -->
+      </class> <!-- Scripts.SC002_testCheckAccountWithdrawal -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
